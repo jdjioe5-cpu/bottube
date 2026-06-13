@@ -8338,7 +8338,7 @@ def search_videos():
 
     # Engagement threshold
     min_views, error = _parse_positive_int_query("min_views", 0, min_value=0)
-    if error:
+    if error is not None:
         return error
     if min_views > 0:
         conditions.append("v.views >= ?")
